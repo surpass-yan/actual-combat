@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--禁止页面缩放 移动端必须要加-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0,
+          maximum-scale=1.0, minimum-scale=1.0">
+    <title>手机左图右文</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        #oUls {
+            padding: 10px;
+        }
+        #oUls li {
+            border-bottom: 1px dashed #999;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #oUls li div:nth-child(1){
+            position: absolute;
+            width: 60px;
+            height: 60px;
+        }
+        #oUls li div:nth-child(1) img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url("images/default.png") no-repeat center;
+            background-size: cover;
+        }
+        #oUls li div:nth-child(2){
+            margin-left: 70px;
+        }
+        #oUls li div:nth-child(2) h3{
+            /*单行省略，溢出部分 省略号*/
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 16px;
+            color: #333;
+        }
+        #oUls li div:nth-child(2) P{
+            /*多行省略 四个必须一起用 最后一个是设置行数   这里让2行时省略*/
+            display: -webkit-box;
+            overflow:hidden;
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:2;/*2行，行数*/
+            font-size: 14px;
+            color: darkgray;
+        }
+        #back {
+            position: fixed;
+            right: 15px;
+            bottom: 50px;
+            width: 40px;
+            height: 40px;
+            background: url("images/arrow.png") no-repeat center;
+            background-size: 30px;
+            background-color: rgba(0,0,0,.4);
+            border-radius: 50%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="oUls">
+
+   <!-- <li>
+        <div><img src="images/1.jpg" alt=""></div>
+        <div>
+            <h3>朴槿惠抵达韩国法院接受审查 未作任何表态</h3>
+            <p>复古红鞋+黑丝 陈乔恩游水乡却被吐槽造型诡异复古红鞋+黑丝
+                陈乔恩游水乡却被吐槽造型诡异复古红鞋+黑丝 陈乔恩游水乡却被吐槽造型诡异复古红鞋+黑丝
+                陈乔恩游水乡却被吐槽造型诡异</p>
+        </div>
+    </li>-->
+</ul>
+<i id="back"></i>
+<!--要用的放在上面-->
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
